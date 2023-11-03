@@ -1,4 +1,4 @@
-// Kodlar buraya yazılacak.
+
 const header = document.querySelector(".header");
 header.style.backgroundColor = "orangered";
 header.style.color = "white";
@@ -18,7 +18,7 @@ navItem.style.listStyle = "none";
 const user = document.querySelector("#username");
 const pass = document.querySelector("#password");
 
-user.value = "Anthony";
+user.value = "Bruce";
 pass.value = "123456";
 pass.type = "text";
 user.disabled = "true";
@@ -34,6 +34,7 @@ btn.style.border = "none";
 btn.textContent = "Giriş Yap";
 
 const projects = document.getElementById("projects");
+projects.style.marginTop="50px"
 
 const h3 = projects.firstElementChild;
 
@@ -52,3 +53,15 @@ myProjects.forEach((e)=>{
     projects.lastElementChild.appendChild(li)
     li.textContent=e
 })
+
+const img=document.getElementById("img")
+img.style.backgroundColor="green"
+
+let foto=document.createElement("img")
+foto.src="bocuk.jpeg"
+foto.style.height="300px"
+
+
+img.appendChild(foto)
+
+img.style.marginTop="25px"
