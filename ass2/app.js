@@ -6,16 +6,35 @@ const btnClick = document.querySelector(".btn-click");
 const btnMouseOver = document.querySelector(".btn-over");
 
 // btnClick.style.backgroundColor = "red";
+// btnMouseOver.style.backgroundColor = "red";
 
-function renkUret() {
-  // return Math.floor(Math.random()*256)
-
-  return `rgb(${Math.floor(Math.random() * 256)},${Math.floor(
-    Math.random() * 256
-  )},${Math.floor(Math.random() * 256)})`;
+function rgbUret() {
+  return Math.floor(Math.random() * 256);
 }
 
-btnClick.addEventListener("click", (e) => {
-  // bg.style.backgroundColor=`rgb(${renkUret()},${renkUret()},${renkUret()})`
-  bg.style.backgroundColor = renkUret();
+//stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+//? Aşağıdakinin çalışma mantığını öğren alternatifler yukarı linkte
+
+https: function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
+}
+
+let colorStr = "";
+
+btnClick.addEventListener("click", () => {
+  colorStr = rgbToHex(rgbUret(), rgbUret(), rgbUret());
+  bg.style.backgroundColor = colorStr;
+  document.getElementById("colorText").textContent = colorStr;
+  document.getElementById("colorInput").value = colorStr;
+});
+
+btnMouseOver.addEventListener("mouseover", () => {
+  colorStr = rgbToHex(rgbUret(), rgbUret(), rgbUret());
+  bg.style.backgroundColor = colorStr;
+  document.getElementById("colorText").textContent = colorStr;
+  document.getElementById("colorInput").value = colorStr;
+});
+
+document.getElementById("copy").addEventListener("click", () => {
+  navigator.clipboard.writeText(colorStr);
 });
