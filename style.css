@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+body {
+    font-family: "Press Start 2P";
+    font-size: 2rem;
+    color: white;
+    background-color:rgb(15, 98, 105);
+  }
+  .ass-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  

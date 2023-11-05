@@ -29,7 +29,7 @@ btnClick.addEventListener("click", () => {
 });
 
 btnMouseOver.addEventListener("mouseover", () => {
-  colorStr = rgbToHex(rgbUret(), rgbUret(), rgbUret());
+  colorStr = rgbToHex(rgbUret(), rgbUret(), rgbUret()).toUpperCase();
   bg.style.backgroundColor = colorStr;
   document.getElementById("colorText").textContent = colorStr;
   document.getElementById("colorInput").value = colorStr;
