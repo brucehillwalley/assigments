@@ -51,3 +51,39 @@ document.getElementById("colorInput").addEventListener("input", () => {
   document.getElementById("colorText").textContent =
     document.getElementById("colorInput").value;
 });
+
+/* -------------------------------------------------------------------------- */
+/*                              ALTERNATİF İNCELEYEBİLİRSİN                             */
+/* -------------------------------------------------------------------------- */
+// function RandomColor() {
+//   let items = "0123456789ABCDEF";
+//   let color = "#";
+//   for (let i = 0; i < 6; i++) {
+//       color += items[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+// }
+
+// const main = document.querySelector(".bgDiv");
+// const inputbox = document.querySelector("#colorInput");
+// const colorno = document.querySelector("#colorText");
+// const clipboard = document.querySelector("#coppy");
+// const h1 = document.getElementById("baslik");
+
+// function equal (){
+//   h1.style.color=inputbox.value = main.style.backgroundColor = colorno.textContent = RandomColor();    
+// }
+
+// document.getElementById("ColorButton").addEventListener("click", equal)
+// document.getElementById("mouseover").addEventListener("mouseover", equal);
+// window.addEventListener('load', equal);
+
+// inputbox.addEventListener("input", () => {
+//   const selectColor = inputbox.value;
+//  h1.style.color=main.style.backgroundColor= selectColor;
+// });
+
+// clipboard.addEventListener('click', () => {
+//  navigator.clipboard.writeText(colorno.innerText)
+      
+// })
