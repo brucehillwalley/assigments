@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+    #todo-input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+    li {
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    li:hover {
+      background-color: #f9f9f9;
+    }
+    .completed {
+      text-decoration: line-through;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <h1>To-Do App</h1>
+  <form id="todo-form">
+    <input type="text" id="todo-input" placeholder="Add a new to-do">
+    <button type="submit">Add</button>
+  </form>
+  <ul id="todo-list">
+    <!-- To-Do items will be added here dynamically -->
+  </ul>
+
+  <script>
+    // JavaScript functionality
+    const form = document.getElementById('todo-form');
+    const input = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const todoText = input.value.trim();
+      if (todoText !== '') {
+        const todoItem = document.createElement('li');
+        todoItem.innerText = todoText;
+        todoItem.addEventListener('click', function() {
+          todoItem.classList.toggle('completed');
+        });
+        todoList.appendChild(todoItem);
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+<!-- In this example, when you enter a to-do item in the input field and click "Add", it will be added to the list. Clicking on a to-do item will toggle its completion status. This is a very basic implementation, and you can expand it further by adding features like removing items, local storage support, and more. -->
